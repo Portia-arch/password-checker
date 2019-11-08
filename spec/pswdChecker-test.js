@@ -4,10 +4,10 @@ describe("passwordIsValid", function() {
   describe("validates the password", function() {
     let password = "N4472157o#";
 
-    it("throws an error when password is empty", function() {
+    it("should not be empty", function() {
       expect(Check.passwordIsValid("")).toBe("");
     });
-    it("throws an error when password length is less than 8", function() {
+    it("should not be less than 8 characters", function() {
       expect(
         Check.passwordIsValid("N4472157o#")
           .split("")
@@ -15,19 +15,19 @@ describe("passwordIsValid", function() {
       ).toBe(">8");
     });
 
-    it("throws an error when the password has no lowercase character", function() {
+    it("should have at least one lowercase letter", function() {
       expect(Check.passwordIsValid("N4472157o#")).toMatch(/[a-z]/);
     });
 
-    it("throws an error when the password has no UPPERCASE character", function() {
+    it("should have at least one UPPERCASE letter", function() {
       expect(Check.passwordIsValid("N4472157o#")).toMatch(/[A-Z]/);
     });
 
-    it("throws an error when the password has no digit", function() {
+    it("should have at least one digit", function() {
       expect(Check.passwordIsValid("N4472157o#")).toMatch(/[0-9]/);
     });
 
-    it("throws an error when the password has no symbol", function() {
+    it("should have a special character", function() {
       expect(Check.passwordIsValid("N4472157o#")).toMatch(/[@#$%&]/);
     });
   });
@@ -36,11 +36,11 @@ describe("passwordIsValid", function() {
 describe("passwordIsOk", function() {
   let password = "N4472157o#";
 
-  it("throws an error when password is empty", function() {
+  it("should no be empty", function() {
     expect(Check.passwordIsValid("")).toMatch("");
   });
 
-  it("throws an error when password length is less than 8", function() {
+  it("should not be less than 8", function() {
     expect(
       Check.passwordIsValid("N4472157o#")
         .split("")
