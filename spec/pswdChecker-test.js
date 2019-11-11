@@ -1,5 +1,6 @@
 let Check = require("../src/pswdChecker");
 
+//test if password is valid
 describe("passwordIsValid", function() {
   describe("validates the password", function() {
     let password = "N4472157o#";
@@ -30,6 +31,8 @@ describe("passwordIsValid", function() {
   });
 });
 
+
+// test for password is okay
 describe("passwordIsOk", function() {
   let password = "N4472157o#";
 
