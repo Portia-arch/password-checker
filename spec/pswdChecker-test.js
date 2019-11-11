@@ -1,4 +1,4 @@
-const Check = require("../src/pswdChecker");
+let Check = require("../src/pswdChecker");
 
 describe("passwordIsValid", function() {
   describe("validates the password", function() {
@@ -8,11 +8,8 @@ describe("passwordIsValid", function() {
       expect(Check.passwordIsValid("")).toBe("");
     });
     it("should not be less than 8 characters", function() {
-      expect(
-        Check.passwordIsValid("N4472157o#")
-          .split("")
-          .join("").length
-      ).toBe(">8");
+      let length = password.split('').join('').length;
+      expect(length).toBeGreaterThan(8);
     });
 
     it("should have at least one lowercase letter", function() {
@@ -37,15 +34,16 @@ describe("passwordIsOk", function() {
   let password = "N4472157o#";
 
   it("should no be empty", function() {
-    expect(Check.passwordIsValid("")).toMatch("");
+    expect(Check.passwordIsOk('')).not.toBeNull('');
   });
 
   it("should not be less than 8", function() {
+
     expect(
-      Check.passwordIsValid("N4472157o#")
+      Check.passwordIsOk("N4472157o#")
         .split("")
         .join("").length
-    ).toBe(">8");
+    ).toBeGreaterThan(8);
   });
 });
 //     it("returns false if password does not exist", function () {
