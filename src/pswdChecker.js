@@ -7,7 +7,7 @@ let condition2 = /[A-Z]/;
 let condition3 = /[@#$%&]/;
 let condition4 = /[0-9]/;
 
-const password = "N4472157o#";
+password = "N4472157o#";
 
 //Check if password is valid
 function passwordIsValid(password) {

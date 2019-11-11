@@ -6,7 +6,7 @@ describe("passwordIsValid", function() {
     let password = "N4472157o#";
 
     it("should not be empty", function() {
-      expect(Check.passwordIsValid("")).toBe("");
+      expect(Check.passwordIsValid('N4472157o#')).toBeTruthy('');
     });
     it("should not be less than 8 characters", function() {
       let length = password.split('').join('').length;
@@ -41,12 +41,8 @@ describe("passwordIsOk", function() {
   });
 
   it("should not be less than 8", function() {
-
-    expect(
-      Check.passwordIsOk("N4472157o#")
-        .split("")
-        .join("").length
-    ).toBeGreaterThan(8);
+    let length = password.split('').join('').length;
+   expect(length).toBeGreaterThan(8);
   });
 });
 //     it("returns false if password does not exist", function () {
